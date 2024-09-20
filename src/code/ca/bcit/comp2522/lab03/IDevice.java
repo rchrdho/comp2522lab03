@@ -8,7 +8,7 @@ public abstract class IDevice
 
     private final String purpose;
 
-    IDevice(final String purpose)
+    public IDevice(final String purpose)
     {
         this.purpose = purpose;
     }
@@ -34,5 +34,24 @@ public abstract class IDevice
     }
 
     @Override
-    boolean equals();
+    public boolean equals(final Object o)
+    {
+        if (o == null)
+        {
+            return false;
+        }
+        if (!(o.getClass().equals(this.getClass())))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode()
+    {
+
+        return this.purpose.hashCode();
+    }
 }
