@@ -3,6 +3,9 @@ package ca.bcit.comp2522.lab03;
 import java.util.Objects;
 
 /**
+ * The IDevice class abstracts models a basic Apple.inc product with a purpose.
+ * Provides methods to determine if device purposes are equal
+ * Has an abstract method to print device details
  *
  * @author Richard Ho
  * @author Gem Baojimin Sha
@@ -24,10 +27,8 @@ public abstract class IDevice
 
     String getPurpose()
     {
-        return this.purpose;
+        return purpose;
     }
-
-    abstract void printDetails();
 
     @Override
     public String toString()
@@ -39,8 +40,9 @@ public abstract class IDevice
         sb.append(getPurpose());
 
         return sb.toString();
-
     }
+
+    abstract void printDetails();
 
     @Override
     public boolean equals(final Object o)

@@ -28,6 +28,7 @@ public class IPhone extends IDevice
         sb.append(super.toString());
         sb.append("\nPhone Plan Minutes: " + phonePlanMinutes);
         sb.append("\nPhone Carrier: " + phoneCarrier);
+        sb.append("\n");
 
         return sb.toString();
     }
@@ -52,7 +53,6 @@ public class IPhone extends IDevice
             newIphone = (IPhone) o;
 
             return this.phonePlanMinutes == newIphone.phonePlanMinutes;
-
         }
 
         return false;
@@ -64,6 +64,14 @@ public class IPhone extends IDevice
         return Objects.hashCode(phonePlanMinutes);
     }
 
+    public double getPhonePlanMinutes()
+    {
+        return this.phonePlanMinutes;
+    }
 
+    public String getPhoneCarrier()
+    {
+        return this.phoneCarrier;
+    }
 
 }
