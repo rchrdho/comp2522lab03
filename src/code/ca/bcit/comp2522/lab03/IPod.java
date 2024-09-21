@@ -66,8 +66,18 @@ public class IPod extends IDevice
     }
 
     @Override
-    String printDetails()
+    void printDetails()
     {
-        return this.toString();
+        System.out.println(this.toString());
+    }
+
+    protected int getNumberOfSongsStored()
+    {
+        return numberOfSongsStored;
+    }
+
+    protected double getMaxVolumeDb()
+    {
+        return maxVolumeDb;
     }
 }
