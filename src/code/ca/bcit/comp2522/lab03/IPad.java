@@ -3,7 +3,7 @@ package ca.bcit.comp2522.lab03;
 /**
  *
  * @author Richard Ho
- * @author Gem Baojimin Sha
+ * @author Gem Baojimin
  * @version 1.0
  */
 public class IPad extends IDevice {
