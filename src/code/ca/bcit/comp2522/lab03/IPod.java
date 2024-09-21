@@ -8,10 +8,10 @@ import java.util.Objects;
  * @author Gem
  * @version 1.0
  */
-public abstract class IPod extends IDevice
+public class IPod extends IDevice
 {
 
-    private static final String purpose = "music";
+    private static final String DEVICE_PURPOSE = "music";
 
     private final int numberOfSongsStored;
     private final double maxVolumeDb;
@@ -19,7 +19,7 @@ public abstract class IPod extends IDevice
     public IPod(final int numberOfSongsStored,
                 final double maxVolumeDb)
     {
-        super(purpose);
+        super(DEVICE_PURPOSE);
 
         this.numberOfSongsStored = numberOfSongsStored;
         this.maxVolumeDb = maxVolumeDb;
@@ -46,20 +46,28 @@ public abstract class IPod extends IDevice
         {
             return false;
         }
-        if (!(o instanceof IPod))
+
+        if (o instanceof IPod)
         {
-            return false;
+
+            final IPod ipod;
+            ipod = (IPod) o;
+
+            return this.numberOfSongsStored == ipod.numberOfSongsStored;
         }
 
-        final IPod ipod;
-        ipod = (IPod) o;
-
-        return this.numberOfSongsStored == ipod.numberOfSongsStored;
+        return false;
     }
 
     @Override
     public int hashCode()
     {
         return Objects.hashCode(numberOfSongsStored);
+    }
+
+    @Override
+    String printDetails()
+    {
+        return this.toString();
     }
 }

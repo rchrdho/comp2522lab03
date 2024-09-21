@@ -27,7 +27,7 @@ public abstract class IDevice
         return this.purpose;
     }
 
-    abstract void printDetails();
+    abstract String printDetails();
 
     @Override
     public String toString()
@@ -50,6 +50,7 @@ public abstract class IDevice
         {
             return false;
         }
+
         if (!(o.getClass().equals(this.getClass())))
         {
             return false;
