@@ -1,7 +1,12 @@
 package ca.bcit.comp2522.lab03;
 
 import java.util.Objects;
-
+/**
+ *
+ * @author Richard Ho
+ * @author Gem Baojimin Sha
+ * @version 1.0
+ */
 public class IPhone extends IDevice
 {
     private static final String IPHONE_PURPOSE = "talking";
