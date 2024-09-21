@@ -1,6 +1,7 @@
 package ca.bcit.comp2522.lab03;
 
 import java.util.Objects;
+
 /**
  *
  * @author Richard Ho
@@ -11,8 +12,8 @@ public class IPhone extends IDevice
 {
     private static final String IPHONE_PURPOSE = "talking";
 
-    private double phonePlanMinutes = 0;
-    private String phoneCarrier = "";
+    private final double phonePlanMinutes;
+    private final String phoneCarrier;
 
     public IPhone(final double phonePlanMinutes,
                   final String carrier)
@@ -20,7 +21,7 @@ public class IPhone extends IDevice
         super(IPHONE_PURPOSE);
 
         this.phonePlanMinutes = phonePlanMinutes;
-        this.phoneCarrier = carrier;
+        this.phoneCarrier     = carrier;
 
     }
 
