@@ -1,5 +1,7 @@
 package ca.bcit.comp2522.lab03;
 
+import java.util.Objects;
+
 public class IPhone extends IDevice
 {
     private static final String IPHONE_PURPOSE = "talking";
@@ -31,9 +33,9 @@ public class IPhone extends IDevice
     }
 
     @Override
-    String printDetails()
+    void printDetails()
     {
-        return this.toString();
+        System.out.println(this.toString());
     }
 
     @Override
@@ -49,10 +51,19 @@ public class IPhone extends IDevice
             IPhone newIphone;
             newIphone = (IPhone) o;
 
-            return newIphone.getPurpose().equalsIgnoreCase(this.getPurpose());
+            return this.phonePlanMinutes == newIphone.phonePlanMinutes;
 
         }
 
         return false;
     }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hashCode(phonePlanMinutes);
+    }
+
+
+
 }

@@ -27,7 +27,7 @@ public abstract class IDevice
         return this.purpose;
     }
 
-    abstract String printDetails();
+    abstract void printDetails();
 
     @Override
     public String toString()
