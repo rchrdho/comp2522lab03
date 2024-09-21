@@ -6,7 +6,7 @@ package ca.bcit.comp2522.lab03;
  * @author Gem Baojimin Sha
  * @version 1.0
  */
-public class Ipad extends IDevice {
+public class IPad extends IDevice {
 
     private static final String IPad_PURPOSE = "learning";
     private final boolean hasCase;
