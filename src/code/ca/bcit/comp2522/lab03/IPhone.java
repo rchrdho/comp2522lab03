@@ -11,8 +11,8 @@ public class IPhone extends IDevice
 {
     private static final String IPHONE_PURPOSE = "talking";
 
-    private double phonePlanMinutes = 0;
-    private String phoneCarrier = "";
+    private double phonePlanMinutes;
+    private String phoneCarrier;
 
     public IPhone(final double phonePlanMinutes,
                   final String carrier)
@@ -20,7 +20,7 @@ public class IPhone extends IDevice
         super(IPHONE_PURPOSE);
 
         this.phonePlanMinutes = phonePlanMinutes;
-        this.phoneCarrier = carrier;
+        this.phoneCarrier     = carrier;
 
     }
 
@@ -32,7 +32,7 @@ public class IPhone extends IDevice
 
         sb.append(super.toString());
         sb.append("\nPhone Plan Minutes: " + phonePlanMinutes);
-        sb.append("\nPhone Carrier: " + phoneCarrier);
+        sb.append("\nPhone Carrier: "      + phoneCarrier);
         sb.append("\n");
 
         return sb.toString();
@@ -71,12 +71,12 @@ public class IPhone extends IDevice
 
     public double getPhonePlanMinutes()
     {
-        return this.phonePlanMinutes;
+        return phonePlanMinutes;
     }
 
     public String getPhoneCarrier()
     {
-        return this.phoneCarrier;
+        return phoneCarrier;
     }
 
 }

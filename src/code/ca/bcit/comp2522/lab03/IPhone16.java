@@ -9,16 +9,15 @@ import java.util.Objects;
  */
 public class IPhone16 extends IPhone
 {
-    private boolean highResCamera;
-    private int     memoryGB;
+    private boolean     highResCamera;
+    private int         memoryGB;
+    private double      phonePlanMinutes;
+    private String      iphone16Carrier;
 
-    private double phonePlanMinutes;
-    private String iphone16Carrier;
-
-    public IPhone16(final double phonePlanMinutes,
-                    final String iphone16Carrier,
+    public IPhone16(final double  phonePlanMinutes,
+                    final String  iphone16Carrier,
                     final boolean highResCamera,
-                    final int memoryGB)
+                    final int     memoryGB)
     {
         super(phonePlanMinutes, iphone16Carrier);
 
@@ -26,19 +25,23 @@ public class IPhone16 extends IPhone
         this.memoryGB      = memoryGB;
     }
 
-    public int getMemoryGB() {
+    public int getMemoryGB()
+    {
         return memoryGB;
     }
 
-    public boolean isHighResCamera() {
+    public boolean isHighResCamera()
+    {
         return highResCamera;
     }
 
-    public void setMemoryGB(final int memoryGB) {
+    public void setMemoryGB(final int memoryGB)
+    {
         this.memoryGB = memoryGB;
     }
 
-    public void setHighResCamera(final boolean highResCamera) {
+    public void setHighResCamera(final boolean highResCamera)
+    {
         this.highResCamera = highResCamera;
     }
 
@@ -50,10 +53,10 @@ public class IPhone16 extends IPhone
         sb = new StringBuilder();
 
         sb.append(super.toString());
-        sb.append("\nHigh res: " + highResCamera);
-        sb.append("\nMemory GB: " + memoryGB);
-        sb.append("\nPhone Plan Minutes: " + phonePlanMinutes);
-        sb.append("\nIPhone 16 Carrier: " + iphone16Carrier);
+        sb.append("\nHigh res: "            + highResCamera);
+        sb.append("\nMemory GB: "           + memoryGB);
+        sb.append("\nPhone Plan Minutes: "  + phonePlanMinutes);
+        sb.append("\nIPhone 16 Carrier: "   + iphone16Carrier);
         sb.append("\n");
 
         return sb.toString();

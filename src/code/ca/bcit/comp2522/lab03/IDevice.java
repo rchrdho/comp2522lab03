@@ -53,15 +53,16 @@ public abstract class IDevice
             return false;
         }
 
-        if (!(o.getClass().equals(this.getClass())))
+        if (o.getClass().equals(this.getClass()))
         {
-            return false;
+
+            final IDevice device;
+            device = (IDevice)o;
+
+            return this.getPurpose().equals(device.getPurpose());
         }
 
-        final IDevice obj;
-        obj = (IDevice)o;
-
-        return this.getPurpose().equals(obj.getPurpose());
+        return false;
     }
 
     @Override
