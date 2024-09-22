@@ -1,6 +1,19 @@
 package ca.bcit.comp2522.lab03;
-
+/**
+ * Main class to demonstrate and test the functionality of various Apple devices.
+ * This class creates instances of IPod, IPad, IPhone, and IPhone16,
+ * and tests their equality and printing methods.
+ *
+ * @author Richard Ho
+ * @author Gem Baojimin Sha
+ * @version 1.0
+ */
 public class Main {
+    /**
+     * The main method that runs the demonstration and tests.
+     *
+     * @param args command line arguments (not used in this application)
+     */
     public static void main(final String[] args) {
 // Create IPod objects
         final IPod ipod1;
