@@ -48,6 +48,7 @@ public class IPhone extends IDevice
 
         return sb.toString();
     }
+
     /**
      * Prints the details of the IPhone.
      */
@@ -56,6 +57,7 @@ public class IPhone extends IDevice
     {
         System.out.println(this.toString());
     }
+
     /**
      * Compares this IPhone to another object for equality.
      *
@@ -80,6 +82,7 @@ public class IPhone extends IDevice
 
         return false;
     }
+
     /**
      * Returns a hash code value for the IPhone.
      *
@@ -100,6 +103,7 @@ public class IPhone extends IDevice
     {
         return phonePlanMinutes;
     }
+
     /**
      * Gets the phone carrier.
      *

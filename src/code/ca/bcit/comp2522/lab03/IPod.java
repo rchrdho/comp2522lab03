@@ -59,6 +59,7 @@ public class IPod extends IDevice
     {
         System.out.println(this.toString());
     }
+
     /**
      * Compares this IPod object to another object for equality.
      *
@@ -84,6 +85,7 @@ public class IPod extends IDevice
 
         return false;
     }
+
     /**
      * Generates a hash code for the IPod object.
      *

@@ -33,6 +33,7 @@ public abstract class IDevice
     {
         return purpose;
     }
+
     /**
      * Returns a string representation of the IDevice.
      * This implementation returns the purpose of the device.
@@ -50,12 +51,14 @@ public abstract class IDevice
 
         return sb.toString();
     }
+
     /**
      * Abstract method to print the details of the device.
      * This method should be implemented by subclasses to provide
      * specific details about each type of device.
      */
     abstract void printDetails();
+
     /**
      * Compares this IDevice to another object for equality.
      * Two IDevices are considered equal if they have the same purpose and are of the same class.
@@ -83,6 +86,7 @@ public abstract class IDevice
 
         return false;
     }
+
     /**
      * Returns a hash code value for the IDevice.
      * The hash code is generated based on the device's purpose.

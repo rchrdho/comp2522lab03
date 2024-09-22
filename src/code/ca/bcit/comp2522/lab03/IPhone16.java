@@ -16,8 +16,9 @@ public class IPhone16 extends IPhone
     private int     memoryGB;
 
     // iPhone 16 details
-    private double phonePlanMinutes;
-    private String iphone16Carrier;
+    private double  phonePlanMinutes;
+    private String  iphone16Carrier;
+
     /**
      * Constructs an iPhone 16 with specified attributes.
      *
@@ -36,38 +37,47 @@ public class IPhone16 extends IPhone
         this.highResCamera = highResCamera;
         this.memoryGB      = memoryGB;
     }
+
     /**
      * Gets the memory capacity of the iPhone 16.
      *
      * @return the memory capacity in gigabytes
      */
-    public int getMemoryGB() {
+    public int getMemoryGB()
+    {
         return memoryGB;
     }
+
     /**
      * Checks if the iPhone 16 has a high-resolution camera.
      *
      * @return true if the iPhone has a high-resolution camera, false otherwise
      */
-    public boolean isHighResCamera() {
+    public boolean isHighResCamera()
+    {
         return highResCamera;
     }
+
     /**
      * Sets the memory capacity of the iPhone 16.
      *
      * @param memoryGB the new memory capacity in gigabytes
      */
-    public void setMemoryGB(final int memoryGB) {
+    public void setMemoryGB(final int memoryGB)
+    {
         this.memoryGB = memoryGB;
     }
+
     /**
      * Sets whether the iPhone 16 has a high-resolution camera.
      *
      * @param highResCamera true if the iPhone has a high-resolution camera, false otherwise
      */
-    public void setHighResCamera(final boolean highResCamera) {
+    public void setHighResCamera(final boolean highResCamera)
+    {
         this.highResCamera = highResCamera;
     }
+
     /**
      * Returns a detailed string representation of the iPhone 16.
      *
@@ -89,6 +99,7 @@ public class IPhone16 extends IPhone
 
         return sb.toString();
     }
+
     /**
      * Prints the complete details of the iPhone 16 to the console.
      */
@@ -97,6 +108,7 @@ public class IPhone16 extends IPhone
     {
         System.out.println(toString());
     }
+
     /**
      * Compares this iPhone 16 to another object for equality.
      * Two iPhone 16s are considered equal if they have the same camera resolution and phone plan minutes.
@@ -123,6 +135,7 @@ public class IPhone16 extends IPhone
 
         return false;
     }
+
     /**
      * Returns a hash code value for the iPhone 16.
      * The hash code is generated based on the phone plan minutes.
