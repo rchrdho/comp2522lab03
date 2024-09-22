@@ -3,7 +3,8 @@ package ca.bcit.comp2522.lab03;
 import java.util.Objects;
 
 /**
- *
+ * Represents an IPad device, extending the IDevice class.
+ * This class defines the specific attributes and behaviors of an IPad.
  * @author Richard Ho
  * @author Gem Baojimin Sha
  * @version 1.0
@@ -12,6 +13,7 @@ import java.util.Objects;
 public class IPad extends IDevice {
     // constant defining device purpose.
     private static final String IPad_PURPOSE = "learning";
+
     // iPads details
     private boolean hasCase;
     private String osVersion;
