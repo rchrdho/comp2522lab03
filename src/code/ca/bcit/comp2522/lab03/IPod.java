@@ -3,7 +3,8 @@ package ca.bcit.comp2522.lab03;
 import java.util.Objects;
 
 /**
- *
+ * Represents an IPod device, extending the IDevice class.
+ * This class defines the specific attributes and behaviors of an IPod.
  * @author Richard Ho
  * @author Gem Baojimin Sha
  * @version 1.0
@@ -19,7 +20,7 @@ public class IPod extends IDevice
     private final double maxVolumeDb;
 
     /**
-     *
+     * Constructs an IPod with the specified number of songs stored and maximum volume.
      * @param numberOfSongsStored
      * @param maxVolumeDb
      */
@@ -31,7 +32,11 @@ public class IPod extends IDevice
         this.numberOfSongsStored = numberOfSongsStored;
         this.maxVolumeDb         = maxVolumeDb;
     }
-
+    /**
+     * Returns a string representation of the IPod object.
+     *
+     * @return a string containing the IPod's details, including the number of songs stored and maximum volume
+     */
     @Override
     public String toString()
     {
@@ -46,13 +51,20 @@ public class IPod extends IDevice
 
         return sb.toString();
     }
-
+    /**
+     * Prints the details of the IPod to the console.
+     */
     @Override
     void printDetails()
     {
         System.out.println(this.toString());
     }
-
+    /**
+     * Compares this IPod object to another object for equality.
+     *
+     * @param o the object to compare with
+     * @return true if the objects are equal, false otherwise
+     */
     @Override
     public boolean equals(final Object o)
     {
@@ -72,7 +84,11 @@ public class IPod extends IDevice
 
         return false;
     }
-
+    /**
+     * Generates a hash code for the IPod object.
+     *
+     * @return the hash code based on the number of songs stored
+     */
     @Override
     public int hashCode()
     {

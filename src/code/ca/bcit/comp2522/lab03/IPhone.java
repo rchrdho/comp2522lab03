@@ -2,15 +2,16 @@ package ca.bcit.comp2522.lab03;
 
 import java.util.Objects;
 /**
- *
+ * Represents an IPhone device, extending the IDevice class.
  * @author Richard Ho
  * @author Gem Baojimin Sha
  * @version 1.0
  */
 public class IPhone extends IDevice
 {
+    // constant defining device purpose.
     private static final String IPHONE_PURPOSE = "talking";
-
+    // Iphone details
     private double phonePlanMinutes = 0;
     private String phoneCarrier = "";
 
@@ -89,6 +90,7 @@ public class IPhone extends IDevice
     {
         return Objects.hashCode(phonePlanMinutes);
     }
+
     /**
      * Gets the number of minutes in the phone plan.
      *

@@ -28,25 +28,25 @@ public class Main {
         ipod3.printDetails();
 
 // Create IPad objects
-//        final IPad ipad1;
-//        final IPad ipad2;
-//        final IPad ipad3;
-//        ipad1 = new IPad(true, "iPadOS 15"); // Has case, OS version iPadOS 15
-//        ipad2 = new IPad(false, "iPadOS 14"); // No case, OS version iPadOS 14
-//        ipad3 = new IPad(true, "iPadOS 15"); // Has case, OS version iPadOS 15
-//// Test equality and inequality for IPad
-//        System.out.println("IPad Equality Test:");
-//        if (!ipad1.equals(ipad2)) {
-//            System.out.println("CORRECT: ipad1 is not equal to ipad2");
-//        } else {
-//            System.out.println("INCORRECT: ipad1 should not be equal to ipad2");
-//        }
-//        if (ipad1.equals(ipad3)) {
-//            System.out.println("CORRECT: ipad1 is equal to ipad3");
-//        } else {
-//            System.out.println("INCORRECT: ipad1 should be equal to ipad3");
-//        }
-//        System.out.println();
+        final IPad ipad1;
+        final IPad ipad2;
+        final IPad ipad3;
+        ipad1 = new IPad(true, "iPadOS 15"); // Has case, OS version iPadOS 15
+        ipad2 = new IPad(false, "iPadOS 14"); // No case, OS version iPadOS 14
+        ipad3 = new IPad(true, "iPadOS 15"); // Has case, OS version iPadOS 15
+// Test equality and inequality for IPad
+        System.out.println("IPad Equality Test:");
+        if (!ipad1.equals(ipad2)) {
+            System.out.println("CORRECT: ipad1 is not equal to ipad2");
+        } else {
+            System.out.println("INCORRECT: ipad1 should not be equal to ipad2");
+        }
+        if (ipad1.equals(ipad3)) {
+            System.out.println("CORRECT: ipad1 is equal to ipad3");
+        } else {
+            System.out.println("INCORRECT: ipad1 should be equal to ipad3");
+        }
+        System.out.println();
 // Create IPhone objects
         final IPhone iphone1;
         final IPhone iphone2;
