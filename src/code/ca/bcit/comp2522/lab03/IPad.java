@@ -11,8 +11,8 @@ public class IPad extends IDevice {
 
     private static final String IPad_PURPOSE = "learning";
 
-    private final boolean hasCase;
-    private final String  systemVersion;
+    private boolean hasCase;
+    private String  systemVersion;
 
     public IPad(boolean hasCase,
                 String systemVersion) {
