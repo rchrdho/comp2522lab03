@@ -6,26 +6,27 @@ import java.util.Objects;
  * Represents an iPhone 16 device, extending the IPhone class.
  * This class defines the specific attributes and behaviors of an iPhone 16,
  * including its camera resolution, memory capacity, phone plan minutes, and carrier.
+ *
  * @author Richard Ho
  * @author Gem Baojimin Sha
  */
 public class IPhone16 extends IPhone
 {
-    // constant defining device purpose.
+
     private boolean highResCamera;
     private int     memoryGB;
 
     // iPhone 16 details
-    private double  phonePlanMinutes;
-    private String  iphone16Carrier;
+    private final double  phonePlanMinutes;
+    private final String  iphone16Carrier;
 
     /**
      * Constructs an iPhone 16 with specified attributes.
      *
      * @param phonePlanMinutes the number of minutes in the phone plan
-     * @param iphone16Carrier the phone carrier for this iPhone 16
-     * @param highResCamera whether the iPhone has a high-resolution camera
-     * @param memoryGB the amount of memory in gigabytes
+     * @param iphone16Carrier  the phone carrier for this iPhone 16
+     * @param highResCamera    whether the iPhone has a high-resolution camera
+     * @param memoryGB         the amount of memory in gigabytes
      */
     public IPhone16(final double phonePlanMinutes,
                     final String iphone16Carrier,
@@ -34,8 +35,10 @@ public class IPhone16 extends IPhone
     {
         super(phonePlanMinutes, iphone16Carrier);
 
-        this.highResCamera = highResCamera;
-        this.memoryGB      = memoryGB;
+        this.phonePlanMinutes = phonePlanMinutes;
+        this.iphone16Carrier  = iphone16Carrier;
+        this.highResCamera    = highResCamera;
+        this.memoryGB         = memoryGB;
     }
 
     /**

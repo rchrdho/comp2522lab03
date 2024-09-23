@@ -46,7 +46,7 @@ public class IPod extends IDevice
 
         sb.append(super.toString());
         sb.append("\nNumber of Songs Stored: " + numberOfSongsStored);
-        sb.append("\nMax Volume Db: " + maxVolumeDb);
+        sb.append("\nMax Volume Db: "          + maxVolumeDb);
         sb.append("\n");
 
         return sb.toString();

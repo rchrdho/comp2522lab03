@@ -3,6 +3,7 @@ package ca.bcit.comp2522.lab03;
 import java.util.Objects;
 /**
  * Represents an IPhone device, extending the IDevice class.
+ *
  * @author Richard Ho
  * @author Gem Baojimin Sha
  * @version 1.0

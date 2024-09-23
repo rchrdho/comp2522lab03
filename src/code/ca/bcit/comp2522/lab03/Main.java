@@ -115,5 +115,9 @@ public class Main
             System.out.println("INCORRECT: iphone16_1 should not be equal to iphone16_3");
         }
         System.out.println();
+
+        iphone16_1.printDetails();
+        iphone16_2.printDetails();
+        iphone16_3.printDetails();
     }
 }

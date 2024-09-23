@@ -9,8 +9,9 @@ import java.util.Objects;
  * @author Gem Baojimin Sha
  * @version 1.0
  */
+public class IPad extends IDevice
+{
 
-public class IPad extends IDevice {
     // constant defining device purpose.
     private static final String IPad_PURPOSE = "learning";
 
@@ -25,9 +26,10 @@ public class IPad extends IDevice {
      * @param osVersion the operating system version of the iPad
      */
     public IPad(final boolean hasCase,
-                final String  osVersion) {
-
+                final String  osVersion)
+    {
         super("IPad_PURPOSE");
+
         this.hasCase = hasCase;
         this.osVersion = osVersion;
     }
@@ -37,15 +39,18 @@ public class IPad extends IDevice {
      *
      * @return true if the iPad has a case, false otherwise
      */
-    public boolean hasCase() {
+    public boolean hasCase()
+    {
         return hasCase;
     }
+
     /**
      * Sets whether the iPad has a case.
      *
      * @param hasCase true if the iPad has a case, false otherwise
      */
-    public void setHasCase(final boolean hasCase) {
+    public void setHasCase(final boolean hasCase)
+    {
 
         this.hasCase = hasCase;
     }
@@ -55,61 +60,75 @@ public class IPad extends IDevice {
      *
      * @return the operating system version
      */
-    public String getOsVersion() {
+    public String getOsVersion()
+    {
 
         return osVersion;
     }
+
     /**
      * Sets the operating system version of the iPad.
      *
      * @param osVersion the new operating system version
      */
-    public void setOsVersion(String osVersion) {
+    public void setOsVersion(String osVersion)
+    {
 
         this.osVersion = osVersion;
     }
+
     /**
      * Returns a string representation of the IPad.
      *
      * @return a string containing the IPad's details
      */
      @Override
-public String toString() {
-    final StringBuilder sb;
-    sb = new StringBuilder();
+    public String toString()
+     {
+        final StringBuilder sb;
 
-    sb.append(super.toString());
-    sb.append("\nHas Case: " + hasCase);
-    sb.append("\nIPAD OS version: " + osVersion);
-    return sb.toString();
+        sb = new StringBuilder();
 
-}
+        sb.append(super.toString());
+        sb.append("\nHas Case: " + hasCase);
+        sb.append("\nIPAD OS version: " + osVersion);
+
+        return sb.toString();
+
+     }
 
     /**
      * Prints the details of the IPad.
      */
     @Override
-    void printDetails(){
+    void printDetails()
+    {
         System.out.println(this.toString());
     }
+
     /**
      * Compares this IPad to another object for equality.
      *
      * @param o the object to compare with
      * @return true if the objects are equal, false otherwise
      */
-    public boolean equals(final Object o){
+    public boolean equals(final Object o)
+    {
         if(o == null){
             return false;
         }
+
         if(o instanceof IPad){
             IPad newIPad;
             newIPad = (IPad) o;
 
             return this.osVersion.equals(newIPad.getOsVersion());
 
-        }return false;
+        }
+
+        return false;
     }
+
     /**
      * Returns a hash code value for the IPad.
      *
@@ -121,7 +140,5 @@ public String toString() {
 
         return Objects.hashCode(osVersion);
     }
-
-
 
 }

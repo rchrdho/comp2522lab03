@@ -79,6 +79,7 @@ public abstract class IDevice
         {
 
             final IDevice device;
+
             device = (IDevice)o;
 
             return this.getPurpose().equals(device.getPurpose());
