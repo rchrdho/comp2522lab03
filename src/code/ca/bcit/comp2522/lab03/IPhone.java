@@ -32,6 +32,7 @@ public class IPhone extends IDevice
         this.phoneCarrier     = carrier;
 
     }
+
     /**
      * Returns a string representation of the IPhone.
      *
@@ -93,7 +94,7 @@ public class IPhone extends IDevice
     @Override
     public int hashCode()
     {
-        return Objects.hashCode(phonePlanMinutes);
+        return Double.hashCode(phonePlanMinutes);
     }
 
     /**

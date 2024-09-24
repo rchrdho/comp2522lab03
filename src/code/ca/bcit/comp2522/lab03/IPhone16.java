@@ -28,8 +28,8 @@ public class IPhone16 extends IPhone
      * @param highResCamera    whether the iPhone has a high-resolution camera
      * @param memoryGB         the amount of memory in gigabytes
      */
-    public IPhone16(final double phonePlanMinutes,
-                    final String iphone16Carrier,
+    public IPhone16(final double  phonePlanMinutes,
+                    final String  iphone16Carrier,
                     final boolean highResCamera,
                     final int     memoryGB)
     {
@@ -109,7 +109,7 @@ public class IPhone16 extends IPhone
     @Override
     void printDetails()
     {
-        System.out.println(toString());
+        System.out.println(this);
     }
 
     /**
@@ -148,7 +148,7 @@ public class IPhone16 extends IPhone
     @Override
     public int hashCode()
     {
-        return Objects.hashCode(phonePlanMinutes);
+        return Double.hashCode(phonePlanMinutes);
     }
 
 }

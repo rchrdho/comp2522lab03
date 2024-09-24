@@ -13,7 +13,7 @@ public class IPad extends IDevice
 {
 
     // constant defining device purpose.
-    private static final String IPad_PURPOSE = "learning";
+    private static final String IPAD_PURPOSE = "learning";
 
     private boolean hasCase;
     private String  systemVersion;
@@ -27,9 +27,9 @@ public class IPad extends IDevice
     public IPad(final boolean hasCase,
                 final String  osVersion)
     {
-        super("IPad_PURPOSE");
+        super(IPAD_PURPOSE);
 
-        this.hasCase = hasCase;
+        this.hasCase       = hasCase;
         this.systemVersion = osVersion;
     }
 
@@ -70,7 +70,7 @@ public class IPad extends IDevice
      *
      * @param osVersion the new operating system version
      */
-    public void setOsVersion(String osVersion)
+    public void setOsVersion(final String osVersion)
     {
 
         this.systemVersion = osVersion;
@@ -89,7 +89,7 @@ public class IPad extends IDevice
         sb = new StringBuilder();
 
         sb.append(super.toString());
-        sb.append("\nHas Case: " + hasCase);
+        sb.append("\nHas Case: "        + hasCase);
         sb.append("\nIPAD OS version: " + systemVersion);
 
         return sb.toString();
@@ -102,7 +102,7 @@ public class IPad extends IDevice
     @Override
     void printDetails()
     {
-        System.out.println(this.toString());
+        System.out.println(this);
     }
 
     /**
@@ -113,12 +113,15 @@ public class IPad extends IDevice
      */
     public boolean equals(final Object o)
     {
-        if(o == null){
+        if(o == null)
+        {
             return false;
         }
 
-        if(o instanceof IPad){
+        if(o instanceof IPad)
+        {
             IPad newIPad;
+
             newIPad = (IPad) o;
 
             return this.systemVersion.equals(newIPad.getOsVersion());

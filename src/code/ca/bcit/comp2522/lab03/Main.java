@@ -44,10 +44,6 @@ public class Main
         System.out.println();
         System.out.println("IPod details:");
 
-        ipod1.printDetails();
-        ipod2.printDetails();
-        ipod3.printDetails();
-
 // Create IPad objects
         final IPad ipad1;
         final IPad ipad2;
@@ -117,7 +113,5 @@ public class Main
         System.out.println();
 
         iphone16_1.printDetails();
-        iphone16_2.printDetails();
-        iphone16_3.printDetails();
     }
 }

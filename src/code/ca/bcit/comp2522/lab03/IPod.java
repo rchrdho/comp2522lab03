@@ -57,7 +57,7 @@ public class IPod extends IDevice
     @Override
     void printDetails()
     {
-        System.out.println(this.toString());
+        System.out.println(this);
     }
 
     /**
@@ -94,7 +94,7 @@ public class IPod extends IDevice
     @Override
     public int hashCode()
     {
-        return Objects.hashCode(numberOfSongsStored);
+        return Integer.hashCode(numberOfSongsStored);
     }
 
 
