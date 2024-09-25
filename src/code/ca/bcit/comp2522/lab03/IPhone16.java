@@ -1,7 +1,5 @@
 package ca.bcit.comp2522.lab03;
 
-import java.util.Objects;
-
 /**
  * Represents an iPhone 16 device, extending the IPhone class.
  * This class defines the specific attributes and behaviors of an iPhone 16,
@@ -13,32 +11,30 @@ import java.util.Objects;
 public class IPhone16 extends IPhone
 {
 
+    private static final int MINIMUM_MEMORY_GB = 16;
+
     private boolean highResCamera;
     private int     memoryGB;
 
-    // iPhone 16 details
-    private final double  phonePlanMinutes;
-    private final String  iphone16Carrier;
-
     /**
-     * Constructs an iPhone 16 with specified attributes.
+     * Constructs an iPhone 16 using phonePlanMinutes, iphone16Carrier, highResCamera and phoneMemoryGB.
      *
      * @param phonePlanMinutes the number of minutes in the phone plan
      * @param iphone16Carrier  the phone carrier for this iPhone 16
      * @param highResCamera    whether the iPhone has a high-resolution camera
-     * @param memoryGB         the amount of memory in gigabytes
+     * @param phoneMemoryGB    the size of phone memory in gigabytes
      */
     public IPhone16(final double  phonePlanMinutes,
                     final String  iphone16Carrier,
                     final boolean highResCamera,
-                    final int     memoryGB)
+                    final int     phoneMemoryGB)
     {
         super(phonePlanMinutes, iphone16Carrier);
 
-        this.phonePlanMinutes = phonePlanMinutes;
-        this.iphone16Carrier  = iphone16Carrier;
+        isValidMemoryGB(phoneMemoryGB);
+
         this.highResCamera    = highResCamera;
-        this.memoryGB         = memoryGB;
+        this.memoryGB         = phoneMemoryGB;
     }
 
     /**
@@ -84,7 +80,7 @@ public class IPhone16 extends IPhone
     /**
      * Returns a detailed string representation of the iPhone 16.
      *
-     * @return a string containing the iPhone 16's details, including camera resolution, memory, plan minutes, and carrier
+     * @return a string of the iPhone 16's details, including camera resolution, memory, plan minutes, and carrier
      */
     @Override
     public String toString()
@@ -94,11 +90,8 @@ public class IPhone16 extends IPhone
         sb = new StringBuilder();
 
         sb.append(super.toString());
-        sb.append("\nHigh res: "            + highResCamera);
-        sb.append("\nMemory GB: "           + memoryGB);
-        sb.append("\nPhone Plan Minutes: "  + phonePlanMinutes);
-        sb.append("\nIPhone 16 Carrier: "   + iphone16Carrier);
-        sb.append("\n");
+        sb.append("\nHigh res: "      + highResCamera);
+        sb.append("\nMemory GB: "     + memoryGB);
 
         return sb.toString();
     }
@@ -109,15 +102,16 @@ public class IPhone16 extends IPhone
     @Override
     void printDetails()
     {
-        System.out.println(this);
+        System.out.println(this + "\n");
     }
 
     /**
      * Compares this iPhone 16 to another object for equality.
      * Two iPhone 16s are considered equal if they have the same camera resolution and phone plan minutes.
+     * Calls super to use its parent class' equals method to compare phone plan minutes
      *
      * @param o the object to compare with this iPhone 16
-     * @return true if the objects are equal, false otherwise
+     * @return  true if the objects are equal, false otherwise
      */
     @Override
     public boolean equals(final Object o)
@@ -127,28 +121,42 @@ public class IPhone16 extends IPhone
             return false;
         }
 
-        if (o instanceof IPhone16)
+        if (!(o instanceof IPhone16))
         {
-            final IPhone16 newPhone;
-            newPhone = (IPhone16) o;
-
-            return this.highResCamera == newPhone.highResCamera &&
-                    this.phonePlanMinutes == newPhone.phonePlanMinutes;
+            return false;
         }
 
-        return false;
+        // if phonePlanMinutes are NOT equal
+        if (!super.equals(o))
+        {
+            return false;
+        }
+
+        final IPhone16 newPhone;
+
+        newPhone = (IPhone16) o;
+
+        return newPhone.highResCamera == this.highResCamera;
     }
 
     /**
      * Returns a hash code value for the iPhone 16.
-     * The hash code is generated based on the phone plan minutes.
+     * The hash code is generated based on the phonePlanMinutes and highResCamera.
      *
      * @return a hash code value for this iPhone 16 object
      */
     @Override
     public int hashCode()
     {
-        return Double.hashCode(phonePlanMinutes);
+        return super.hashCode() + Boolean.hashCode(highResCamera);
+    }
+
+    private void isValidMemoryGB(final double memoryGB)
+    {
+        if (memoryGB < MINIMUM_MEMORY_GB)
+        {
+            throw new IllegalArgumentException("Invalid memory, value must be at least 16gb");
+        }
     }
 
 }

@@ -5,6 +5,7 @@ import java.util.Objects;
 /**
  * Represents an IPod device, extending the IDevice class.
  * This class defines the specific attributes and behaviors of an IPod.
+ *
  * @author Richard Ho
  * @author Gem Baojimin Sha
  * @version 1.0
@@ -12,17 +13,16 @@ import java.util.Objects;
 public class IPod extends IDevice
 {
 
-    // constant defining device purpose.
     private static final String DEVICE_PURPOSE = "music";
 
-    // ipods unique details
-    private final int    numberOfSongsStored;
-    private final double maxVolumeDb;
+    private int     numberOfSongsStored;
+    private double  maxVolumeDb;
 
     /**
      * Constructs an IPod with the specified number of songs stored and maximum volume.
-     * @param numberOfSongsStored
-     * @param maxVolumeDb
+     *
+     * @param numberOfSongsStored Total number of songs currently stored on this ipod.
+     * @param maxVolumeDb         Maximum volume this device can reach in decibels.
      */
     public IPod(final int    numberOfSongsStored,
                 final double maxVolumeDb)
@@ -32,6 +32,48 @@ public class IPod extends IDevice
         this.numberOfSongsStored = numberOfSongsStored;
         this.maxVolumeDb         = maxVolumeDb;
     }
+
+    /**
+     * Accessor for numberOfSongsStored.
+     *
+     * @return total number of songs stored on ipod.
+     */
+    public int getNumberOfSongsStored()
+    {
+        return numberOfSongsStored;
+    }
+
+    /**
+     * Accessor for maxVolumeDb.
+     *
+     * @return maximum volume this ipod can reach in decibels.
+     */
+    public double getMaxVolumeDb()
+    {
+        return maxVolumeDb;
+    }
+
+    /**
+     *  Mutator for numberOfSongsStored.
+     *
+     * @param numberOfSongsStored the new numberOfSongStored to set
+     */
+    public void setNumberOfSongsStored(int numberOfSongsStored)
+    {
+        this.numberOfSongsStored = numberOfSongsStored;
+    }
+
+    /**
+     * Mutator for maxVolumeDb.
+     *
+     * @param maxVolumeDb the new maxVolumeDb to set
+     */
+    public void setMaxVolumeDb(double maxVolumeDb)
+    {
+        this.maxVolumeDb = maxVolumeDb;
+    }
+
+
     /**
      * Returns a string representation of the IPod object.
      *
@@ -47,24 +89,24 @@ public class IPod extends IDevice
         sb.append(super.toString());
         sb.append("\nNumber of Songs Stored: " + numberOfSongsStored);
         sb.append("\nMax Volume Db: "          + maxVolumeDb);
-        sb.append("\n");
 
         return sb.toString();
     }
+
     /**
      * Prints the details of the IPod to the console.
      */
     @Override
     void printDetails()
     {
-        System.out.println(this);
+        System.out.println(this + "\n");
     }
 
     /**
-     * Compares this IPod object to another object for equality.
+     * Compares this IPod numberOfSongsStored with another IPods numberOfSongsStored.
      *
      * @param o the object to compare with
-     * @return true if the objects are equal, false otherwise
+     * @return true if their numberOfSongsStored are equal, false otherwise
      */
     @Override
     public boolean equals(final Object o)
@@ -80,7 +122,7 @@ public class IPod extends IDevice
             final IPod ipod;
             ipod = (IPod) o;
 
-            return this.numberOfSongsStored == ipod.numberOfSongsStored;
+            return this.numberOfSongsStored == ipod.numberOfSongsStored ;
         }
 
         return false;

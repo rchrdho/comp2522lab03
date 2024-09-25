@@ -13,17 +13,19 @@ import java.util.Objects;
  */
 public abstract class IDevice
 {
-    // constant defining device purpose.
+
     private final String purpose;
 
     /**
      * Constructs an IDevice with a specified purpose.
+     *
      * @param purpose String representing purpose of device
      */
     public IDevice(final String purpose)
     {
         this.purpose = purpose;
     }
+
     /**
      * Gets the purpose of the device.
      *
@@ -47,7 +49,9 @@ public abstract class IDevice
 
         sb = new StringBuilder();
 
-        sb.append(getPurpose());
+        sb.append(this.getClass().getSimpleName());
+        sb.append(" details:\n");
+        sb.append("Purpose: " + purpose);
 
         return sb.toString();
     }
@@ -64,7 +68,7 @@ public abstract class IDevice
      * Two IDevices are considered equal if they have the same purpose and are of the same class.
      *
      * @param o the object to compare with this IDevice
-     * @return true if the objects are equal, false otherwise
+     * @return true if the objects purposes are equal, false otherwise
      */
     @Override
     public boolean equals(final Object o)
@@ -82,7 +86,7 @@ public abstract class IDevice
 
             device = (IDevice)o;
 
-            return this.getPurpose().equals(device.getPurpose());
+            return this.purpose.equalsIgnoreCase(device.purpose);
         }
 
         return false;

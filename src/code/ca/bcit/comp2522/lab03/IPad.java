@@ -5,6 +5,7 @@ import java.util.Objects;
 /**
  * Represents an IPad device, extending the IDevice class.
  * This class defines the specific attributes and behaviors of an IPad.
+ *
  * @author Richard Ho
  * @author Gem Baojimin Sha
  * @version 1.0
@@ -12,11 +13,10 @@ import java.util.Objects;
 public class IPad extends IDevice
 {
 
-    // constant defining device purpose.
     private static final String IPAD_PURPOSE = "learning";
 
-    private boolean hasCase;
-    private String  systemVersion;
+    private boolean   hasCase;
+    private String    systemVersion;
 
     /**
      * Constructs an IPad with specified case status and OS version.
@@ -93,7 +93,6 @@ public class IPad extends IDevice
         sb.append("\nIPAD OS version: " + systemVersion);
 
         return sb.toString();
-
      }
 
     /**
@@ -102,11 +101,11 @@ public class IPad extends IDevice
     @Override
     void printDetails()
     {
-        System.out.println(this);
+        System.out.println(this + "\n");
     }
 
     /**
-     * Compares this IPad to another object for equality.
+     * Compares this IPads system version with another IPads system version.
      *
      * @param o the object to compare with
      * @return true if the objects are equal, false otherwise
@@ -124,8 +123,7 @@ public class IPad extends IDevice
 
             newIPad = (IPad) o;
 
-            return this.systemVersion.equals(newIPad.getOsVersion());
-
+            return this.systemVersion.equalsIgnoreCase(newIPad.systemVersion);
         }
 
         return false;
@@ -139,7 +137,6 @@ public class IPad extends IDevice
     @Override
     public int hashCode()
     {
-
         return Objects.hashCode(systemVersion);
     }
 

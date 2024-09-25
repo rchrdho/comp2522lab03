@@ -1,9 +1,9 @@
 package ca.bcit.comp2522.lab03;
 
-import java.util.Objects;
-
 /**
  * Represents an IPhone device, extending the IDevice class.
+ * This class specifies generic attributes that an IPhone MUST have
+ * which includes its purpose, phonePlanMinutes, and phoneCarrier
  *
  * @author Richard Ho
  * @author Gem Baojimin Sha
@@ -11,8 +11,9 @@ import java.util.Objects;
  */
 public class IPhone extends IDevice
 {
-    // constant defining device purpose.
+
     private static final String IPHONE_PURPOSE = "talking";
+    private static final double MINIMUM_MINUTES = 0.00;
 
     private double phonePlanMinutes;
     private String phoneCarrier;
@@ -21,12 +22,14 @@ public class IPhone extends IDevice
      * Constructs an IPhone with specified phone plan minutes and carrier.
      *
      * @param phonePlanMinutes the number of minutes in the phone plan
-     * @param carrier the phone carrier
+     * @param carrier the phone carrier company
      */
     public IPhone(final double phonePlanMinutes,
                   final String carrier)
     {
         super(IPHONE_PURPOSE);
+
+        isValidPhonePlanMinutes(phonePlanMinutes);
 
         this.phonePlanMinutes = phonePlanMinutes;
         this.phoneCarrier     = carrier;
@@ -42,12 +45,12 @@ public class IPhone extends IDevice
     public String toString()
     {
         final StringBuilder sb;
+
         sb = new StringBuilder();
 
         sb.append(super.toString());
         sb.append("\nPhone Plan Minutes: " + phonePlanMinutes);
         sb.append("\nPhone Carrier: "      + phoneCarrier);
-        sb.append("\n");
 
         return sb.toString();
     }
@@ -58,14 +61,14 @@ public class IPhone extends IDevice
     @Override
     void printDetails()
     {
-        System.out.println(this.toString());
+        System.out.println(this + "\n");
     }
 
     /**
-     * Compares this IPhone to another object for equality.
+     * Compares this IPhone phonePlanMinutes to another IPhones phonePlanMinutes.
      *
      * @param o the object to compare with
-     * @return true if the objects are equal, false otherwise
+     * @return true if the objects phonePlanMinutes are equal, false otherwise
      */
     @Override
     public boolean equals(final Object o)
@@ -87,7 +90,7 @@ public class IPhone extends IDevice
     }
 
     /**
-     * Returns a hash code value for the IPhone.
+     * Returns a hash code value for the IPhone phonePlanMinutes.
      *
      * @return a hash code value for this object
      */
@@ -104,7 +107,7 @@ public class IPhone extends IDevice
      */
     public double getPhonePlanMinutes()
     {
-        return this.phonePlanMinutes;
+        return phonePlanMinutes;
     }
 
     /**
@@ -112,9 +115,43 @@ public class IPhone extends IDevice
      *
      * @return the phone carrier
      */
-    public String getPhoneCarrier()
+    public String getCarrier()
     {
         return phoneCarrier;
+    }
+
+    /**
+     * Mutator for Carrier.
+     *
+     * @param carrier a string that is set as the new Carrier.
+     */
+    public void setCarrier(final String carrier)
+    {
+        this.phoneCarrier = carrier;
+    }
+
+    /**
+     * Mutator for phonePlanMinutes
+     *
+     * @param phonePlanMinutes a double that is set as the new phonePlanMinutes
+     */
+    public void setPhonePlanMinutes(final double phonePlanMinutes)
+    {
+        this.phonePlanMinutes = phonePlanMinutes;
+    }
+
+    /**
+     * Checks if the phone was created with reasonable minutes.
+     *
+     * @param phonePlanMinutes          the minutes to validate.
+     * @throws IllegalArgumentException if the minutes are below 0.
+     */
+    protected void isValidPhonePlanMinutes(final double phonePlanMinutes)
+    {
+        if (phonePlanMinutes < MINIMUM_MINUTES)
+        {
+            throw new IllegalArgumentException("Invalid phone plan minutes, cannot be below 0");
+        }
     }
 
 }
